@@ -1,10 +1,10 @@
 # [level 2] 뒤에 있는 큰 수 찾기 - 154539 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/154539?language=csharp) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/154539?language=csharp#) 
 
 ### 성능 요약
 
-메모리: 129 MB, 시간: 16.15 ms
+메모리: 129 MB, 시간: 15.90 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2026년 06월 30일 16:05:21
+2026년 06월 30일 16:08:57
 
 ### 문제 설명
 
