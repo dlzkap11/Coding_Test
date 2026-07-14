@@ -1,21 +1,22 @@
 #include <string>
 #include <vector>
-
+#include <unordered_set>
 using namespace std;
-char c[29];
-string solution(vector<string> a, vector<string> b) {
-    for(int j=0;j<21;j++){
-        c[j] = 0;
+
+string solution(vector<string> participant, vector<string> completion) {
+    string answer = "";
+    unordered_multiset<string> names;
+
+    for(int i = 0; i < participant.size(); i++)
+    {
+        names.insert(participant[i]);
     }
-    for(int i=0;i<a.size();i++){
-        for(int j=0;j<a[i].size();j++){
-            c[j]^=a[i][j];
-        }
+
+    for(int i = 0; i < completion.size(); i++)
+    {
+        unordered_multiset<string>::iterator itr = names.find(completion[i]);
+        names.erase(itr);
     }
-    for(int i=0;i<b.size();i++){
-        for(int j=0;j<b[i].size();j++){
-            c[j]^=b[i][j];
-        }
-    }
-    return string(c);
+
+    return *names.begin();
 }
