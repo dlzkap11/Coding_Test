@@ -1,18 +1,21 @@
 #include <string>
 #include <vector>
-#include <algorithm>
 
 using namespace std;
-
-string solution(vector<string> participant, vector<string> completion) {
-    string answer = "";
-    sort(participant.begin(), participant.end());
-    sort(completion.begin(), completion.end());
-    for(int i=0;i<completion.size();i++)
-    {
-        if(participant[i] != completion[i])
-            return participant[i];
+char c[29];
+string solution(vector<string> a, vector<string> b) {
+    for(int j=0;j<21;j++){
+        c[j] = 0;
     }
-    return participant[participant.size() - 1];
-    //return answer;
+    for(int i=0;i<a.size();i++){
+        for(int j=0;j<a[i].size();j++){
+            c[j]^=a[i][j];
+        }
+    }
+    for(int i=0;i<b.size();i++){
+        for(int j=0;j<b[i].size();j++){
+            c[j]^=b[i][j];
+        }
+    }
+    return string(c);
 }
